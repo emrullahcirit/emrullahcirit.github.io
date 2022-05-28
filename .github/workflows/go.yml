@@ -11,10 +11,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-
-    - name: Set up Go
-      uses: actions/setup-go@v3
-      with:
-        go-version: 1.18
-        run: go run main.go
+      - uses: actions/checkout@v3
+      - uses: actions/setup-go@v3
+        with:
+          go-version: '1.16.1' # The Go version to download (if necessary) and use.
+      - run: go run hello.go
